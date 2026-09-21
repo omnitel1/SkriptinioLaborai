@@ -1,0 +1,48 @@
+%Dziugas Sabulis
+%EEF25/1
+%21/09/2026
+
+%1
+a = (200:-10:10)'
+
+b = log10(a)
+
+c = 10.^b
+
+d = c - a
+%%
+%2
+A = [pi/2 3i exp(pi); log2(2) 2*pi log10(1); log(exp(1)) pi^pi cos(pi)]
+
+A(:,2) = rand(3,1)
+
+stulpeliu_sumos = sum(A)
+%% 
+%3
+A=6; f=4; o=1.2; U1=3.5; U2=2.5;
+t = 0:0.001:1.5;
+s_svar = A*sin(2*pi*f*t)+ 0.5*A*cos(4*pi*f*t);
+n = o*randn(size(t));
+s = s_svar +n;
+
+s_atrinktas = s(s>U1);
+
+s_filtruotas = s;
+s_filtruotas(abs(s)<U2)=0;
+
+dydis_nef = length(s)
+
+dydis_atr = length(s_atrinktas)
+
+max_f = max(s_filtruotas)
+min_f = min(s_filtruotas)
+%% 
+%papildoma
+
+A = input('Iveskite vektoriu A:')
+
+B = reshape(repmat(A,4),1,[]);
+
+disp(B)
+
+
