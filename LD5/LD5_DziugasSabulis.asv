@@ -1,0 +1,34 @@
+%Dziugas Sabulis
+%EEF25/1
+%12/10/2026
+
+studentai_cell = {
+    'Jonas',   'Jonaitis',   'Gedimino pr. 1, Vilnius';
+    'Petras',  'Petraitis',  'Savanorių pr. 10, Kaunas';
+    'Rūta',    'Rūtaitė',    'Taikos pr. 5, Klaipėda'
+    }
+
+laukai = {'Vardas', 'Pavarde', 'Adresas'};
+
+studentai_struct = cell2struct(studentai_cell, laukai, 2)
+
+%b
+
+ar_struktura = isstruct(studentai_struct);
+if ar_struktura
+    disp('Kintamasis yra struktūra.');
+else
+    disp('Kintamasis nėra struktūra.');
+end
+
+%%2
+ivesti_m=[];
+
+while true
+
+    m = input('Iveskite kintamojo reiksme: ')
+    if ismember(m,ivesti_m)
+        break
+    end
+    
+    ivesti_m(end+1) = m;
